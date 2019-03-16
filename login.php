@@ -98,7 +98,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 				</div>
 				
 				<footer>
-					<small>&copy; Copyright 2019, George Corser Roman :)
+					<small>&copy; Copyright 2019, George Corser and Roman :)
 					</small>
 				</footer>
 				
