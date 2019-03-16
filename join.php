@@ -9,9 +9,7 @@
 session_start(); 
 // include the class that handles database connections
 require "../PhpProject/database.php";
-
-if ( !empty($_POST)) { // if $_POST filled then process the form
-	// initialize $_POST variables
+	$name = $_POST['name'];
 	$username = $_POST['username']; // username is email address
 	$password = $_POST['password'];
 	$passwordhash = MD5($password);
@@ -20,32 +18,11 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 	// verify the username/password
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "SELECT * FROM customers WHERE email = ? AND password_hash = ? LIMIT 1";
+	$sql = "INSERT INTO customers (name,email,mobile, password_hash) values($name, $username, ?, $passwordhash)";
 	$q = $pdo->prepare($sql);
 	$q->execute(array($username,$passwordhash));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
-	
-	if($data) { // if successful login set session variables
-		// echo "success!";
-		$_SESSION['tJHSQRuoNnWUwLRe'] = $data['id'];
-		$_SESSION['name'] = $data['name'];
-		$_SESSION['email'] = $data['email'];
-		$_SESSION['mobile'] = $data['mobile'];
-		$sessionid = $data['id'];
-		Database::disconnect();
-		header("Location: customers.php ");
-		// javascript below is necessary for system to work on github
-		// echo "<script type='text/javascript'> document.location = 'fr_assignments.php'; </script>";
-		exit();
-	}
-	else { // display error message
-		Database::disconnect();
-		$labelError = "Incorrect username/password";
-	}
 
-
-} 
-// if $_POST NOT filled then display login form, below.
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +42,13 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 			</div>
 
 			<form class="form-horizontal" action="login.php" method="post">
+
+			<div class="control-group">
+					<label class="control-label">Name</label>
+					<div class="controls">
+						<input name="name" type="text"  placeholder="me@email.com" required> 
+					</div>	
+				</div> 
 								  
 				<div class="control-group">
 					<label class="control-label">Username (Email)</label>
@@ -81,9 +65,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 				</div> 
 
 				<div class="form-actions">
-					<button type="submit" class="btn btn-success">Sign in</button>
-					&nbsp; &nbsp;
-					<a class="btn btn-primary" href="fr_per_create2.php">Join (New Volunteer)</a>
+					<a class="btn btn-primary" href="login.php">Join (New Volunteer)</a>
 				</div>
 				
 				<div>
