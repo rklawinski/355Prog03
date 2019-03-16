@@ -10,6 +10,8 @@ session_start();
 // include the class that handles database connections
 require "../PhpProject/database.php";
 
+if ( !empty($_POST)) { // if $_POST filled then process the form
+    // initialize $_POST variables
     $name = $_POST['name']; // username is email address
     $username = $_POST['username']; // username is email address
     $mobile = $_POST['mobile']; // username is email address
@@ -26,6 +28,9 @@ require "../PhpProject/database.php";
 	$data = $q->fetch(PDO::FETCH_ASSOC);
 	Database::disconnect();
 
+
+
+} 
 // if $_POST NOT filled then display login form, below.
 ?>
 
