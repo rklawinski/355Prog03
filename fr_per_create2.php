@@ -9,13 +9,12 @@
 session_start(); 
 // include the class that handles database connections
 require "../PhpProject/database.php";
-require "customers.class.php";
 
 if ( !empty($_POST)) { // if $_POST filled then process the form
     // initialize $_POST variables
-    $username = $_POST['name']; // username is email address
+    $name = $_POST['name']; // username is email address
     $username = $_POST['username']; // username is email address
-    $username = $_POST['mobile']; // username is email address
+    $mobile = $_POST['mobile']; // username is email address
 	$password = $_POST['password'];
 	$passwordhash = MD5($password);
 	$labelError = "";
@@ -23,7 +22,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 	// verify the username/password
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO $tableName (name,email,mobile, password_hash) values(?, ?, ?, ?)";
+    $sql = "INSERT INTO customers (name,email,mobile, password_hash) values($name, $username , $mobile, $passwordhash)";
 	$q = $pdo->prepare($sql);
 	$q->execute(array($this->name, $this->email, $this->mobile, $this->password_hashed));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
