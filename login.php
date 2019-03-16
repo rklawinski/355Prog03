@@ -83,7 +83,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 				<div class="form-actions">
 					<button type="submit" class="btn btn-success">Sign in</button>
 					&nbsp; &nbsp;
-					<a class="btn btn-primary" href="join.php">Join (New Volunteer)</a>
+					<a class="btn btn-primary" href="fr_per_create2.php">Join (New Volunteer)</a>
 				</div>
 				
 				<div>
