@@ -18,9 +18,9 @@ require "../PhpProject/database.php";
 	// verify the username/password
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	$sql = "INSERT INTO customers (name,email,mobile, password_hash) values($name, $username, ?, $passwordhash)";
+  $sql = "INSERT INTO customers (name,email,mobile, password_hash) values(?, ?, ?, ?)";
 	$q = $pdo->prepare($sql);
-	$q->execute(array($username,$passwordhash));
+	$q->execute(array($name,$username,$passwordhash));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
 
 ?>
@@ -38,7 +38,7 @@ require "../PhpProject/database.php";
 		<div class="span10 offset1">
 
 			<div class="row">
-				<h3>Login</h3>
+				<h3>Join</h3>
 			</div>
 
 			<form class="form-horizontal" action="join.php" method="post">
@@ -46,7 +46,7 @@ require "../PhpProject/database.php";
 			<div class="control-group">
 					<label class="control-label">Name</label>
 					<div class="controls">
-						<input name="name" type="text"  placeholder="me@email.com" required> 
+						<input name="name" type="text" required> 
 					</div>	
 				</div> 
 								  
