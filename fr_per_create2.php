@@ -22,7 +22,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 	// verify the username/password
 	$pdo = Database::connect();
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO customers (name,email,mobile, password_hash) values($name, $username , $mobile, $passwordhash)";
+    $sql = "INSERT INTO customers (name,email,mobile, password_hash) values(?, ?, ?, ?)";
 	$q = $pdo->prepare($sql);
 	$q->execute(array($this->name, $this->email, $this->mobile, $this->password_hashed));
 	$data = $q->fetch(PDO::FETCH_ASSOC);
