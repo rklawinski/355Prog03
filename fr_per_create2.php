@@ -1,10 +1,4 @@
 <?php
-/* ---------------------------------------------------------------------------
- * filename    : login.php
- * author      : George Corser, gcorser@gmail.com
- * description : This program logs the user in by setting $_SESSION variables
- * ---------------------------------------------------------------------------
- */
 // Start or resume session, and create: $_SESSION[] array
 session_start(); 
 // include the class that handles database connections
