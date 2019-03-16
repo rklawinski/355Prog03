@@ -97,11 +97,11 @@ require "../PhpProject/database.php";
 			<form class="form-horizontal" action="fr_per_create2.php" method="post" enctype="multipart/form-data">
 
 				<div class="control-group <?php echo !empty(Error)?'error':$nameError'';?>">
-					<label class="control-label">First Name</label>
+					<label class="control-label">Name</label>
 					<div class="controls">
-						<input name="name" type="text"  placeholder="First Name" value="<?php echo !empty($fname)?$fname:'';?>">
-						<?php if (!empty($fnameError)): ?>
-							<span class="help-inline"><?php echo $fnameError;?></span>
+						<input name="name" type="text"  placeholder="Name" value="<?php echo !empty($name)?$name:'';?>">
+						<?php if (!empty($nameError)): ?>
+							<span class="help-inline"><?php echo $nameError;?></span>
 						<?php endif; ?>
 					</div>
 				</div>
