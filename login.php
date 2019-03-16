@@ -57,6 +57,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 	</head>
 
 <body>
+<a href='https://github.com/rklawinski/355Prog03' target='_blank'>JRKLAWIN Github</a><br />
     <div class="container">
 		<div class="span10 offset1">
 
