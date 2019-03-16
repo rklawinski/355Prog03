@@ -15,7 +15,7 @@ session_start();
 	// exit;
 // }
 	
-require '../database/database.php';
+require "../PhpProject/database.php";
 if ( !empty($_POST)) { // if not first time through
 	// initialize user input validation variables
 	$fnameError = null;
