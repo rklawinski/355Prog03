@@ -47,7 +47,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 		<div class="span10 offset1">
 
 			<div class="row">
-				<h3>Login</h3>
+				<h3>New User</h3>
 			</div>
 
 			<form class="form-horizontal" action="login.php" method="post">
@@ -81,9 +81,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 				</div> 
 
 				<div class="form-actions">
-					<button type="submit" class="btn btn-success">Sign in</button>
-					&nbsp; &nbsp;
-					<a class="btn btn-primary" href="fr_per_create2.php">Join (New Volunteer)</a>
+					<a class="btn btn-primary" href="login.php">Join (New Volunteer)</a>
 				</div>
 				
 				<footer>
