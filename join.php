@@ -41,7 +41,7 @@ require "../PhpProject/database.php";
 				<h3>Login</h3>
 			</div>
 
-			<form class="form-horizontal" action="login.php" method="post">
+			<form class="form-horizontal" action="join.php" method="post">
 
 			<div class="control-group">
 					<label class="control-label">Name</label>
