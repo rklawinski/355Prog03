@@ -16,8 +16,6 @@ session_start();
 // }
 	
 require "../PhpProject/database.php";
-if ( !empty($_POST)) { // if not first time through
-	// initialize user input validation variables
 	$nameError = null;
 	$emailError = null;
 	$mobileError = null;
@@ -78,7 +76,6 @@ if ( !empty($_POST)) { // if not first time through
 		Database::disconnect();
 		header("Location: fr_events.php");
 	}
-}
 ?>
 
 <!DOCTYPE html>
