@@ -50,7 +50,7 @@ if ( !empty($_POST)) { // if $_POST filled then process the form
 				<h3>New User</h3>
 			</div>
 
-			<form class="form-horizontal" action="login.php" method="post">
+			<form class="form-horizontal" action="fr_per_create2.php" method="post">
 
                 <div class="control-group">
 					<label class="control-label">Name
