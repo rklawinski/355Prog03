@@ -8,7 +8,7 @@
 // Start or resume session, and create: $_SESSION[] array
 session_start(); 
 // include the class that handles database connections
-require "../../database/database.php";
+require "../PhpProject/database.php";
 
 if ( !empty($_POST)) { // if $_POST filled then process the form
 	// initialize $_POST variables
