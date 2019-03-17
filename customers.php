@@ -1,11 +1,6 @@
 <?php
 
-session_start();
-if(!isset($_SESSION["tJHSQRuoNnWUwLRe"])){ // if "user" not set,
-	session_destroy();
-	header('Location: login.php');     // go to login page
-	exit();
-}
+
 
 // include the class that handles database connections
 require "../PhpProject/database.php";
