@@ -1,6 +1,9 @@
 <?php
 
-
+session_start();
+if(!isset($_SESSION["email"])) {
+    header("Location: login.php");
+}
 
 // include the class that handles database connections
 require "../PhpProject/database.php";
